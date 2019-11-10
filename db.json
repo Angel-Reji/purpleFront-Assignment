@@ -1,0 +1,38 @@
+{
+  "data": [
+    {
+      "documentTypeId": "Contract",
+      "fileType": "TIFF",
+      "received": "2019-11-22",
+      "pageCount": "9",
+      "fileSize": "27 MB",
+      "attributes": [
+        {
+          "attributeId": "Application Number",
+          "value": "5678234654"
+        },
+        {
+          "attributeId": "Account Number",
+          "value": "5678234654"
+        },
+        {
+          "attributeId": "Customer Name",
+          "value": "John Doe"
+        },
+        {
+          "attributeId": "Vin",
+          "value": "fe3h2j344"
+        },
+        {
+          "attributeId": "Loan Status",
+          "value": "A"
+        },
+        {
+          "attributeId": "Dealer State",
+          "value": "CA"
+        }
+      ],
+      "id": "5c796a4bb95fde2f3c90a121"
+    }
+  ]
+}
