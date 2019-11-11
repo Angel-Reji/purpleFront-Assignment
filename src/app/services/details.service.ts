@@ -16,7 +16,7 @@ export class DetailsService {
   getDetails(): Observable<any> {
     return this.http.get(this.API);
   }
-  getAllDetails(detailsId: string): Observable<any> {
+  getAllDetailById(detailsId: string): Observable<any> {
     // alert('${this.API}/${detailsId}')
     return this.http.get(`${this.API}/${detailsId}`);
   }

@@ -25,9 +25,13 @@ export class DetailsFormComponent implements OnInit {
   detailsFormGroup: FormGroup;
   attributes: FormArray;
   attributeTable:false;
+  // Doc Types
+  documentType: any = [ 'invoice', 'quote', 'RFP', 'proposal', 'contract', 'packing slip', 'manifest', 'report',' spread sheet'];
+  //File Types
+  fileType: any = [ 'TIFF', 'PSD', 'GIF', 'JPEG', 'PNG', 'PDF', 'EPS', 'AI'];
   ngOnInit() {
     this.createForm();
-    this.getGoodsReceiptById();
+    this.getDetailById();
     this.getDetails();  
   }
   createForm() {
@@ -46,7 +50,7 @@ export class DetailsFormComponent implements OnInit {
       value: ['']
     })
   }
-  // Update The group
+ 
   doSave() {
     let detail = this.detailsFormGroup.value;
     const dataKey = '5c796a4bb95fde2f3c90a121'
@@ -64,20 +68,18 @@ export class DetailsFormComponent implements OnInit {
     this.attributes = this.detailsFormGroup.get('attributes') as FormArray;
     this.attributes.removeAt(i);
   }
-  //Fetch all product
+
   getDetails() {
     this.detailsService
       .getDetails()
       .subscribe(data => {
       this.fetchData = data[0].attributes;
-        console.log("getaa", this.fetchData);
-        // debugger;
       });
   }
 
-  getGoodsReceiptById() {
+  getDetailById() {
     const dataKey = '5c796a4bb95fde2f3c90a121'
-    this.detailsService.getAllDetails(dataKey).subscribe(
+    this.detailsService.getAllDetailById(dataKey).subscribe(
       attribute => {
         this.detailsFormGroup.patchValue({
           documentTypeId: attribute.documentTypeId,
